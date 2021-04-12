@@ -1,0 +1,101 @@
+body {
+    background-color: rgb(82, 0, 0);
+    position: relative;
+}
+
+button {
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-color: aqua;
+}
+
+#ham-icon {
+    display: block;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+}
+
+#ham-icon span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #86f52b;
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+}
+
+#ham-icon span.ham-top {
+    transform-origin: 0% 0%;
+}
+
+#ham-icon span.ham-mid {
+    transform-origin: 0% 100%;
+}
+
+#ham-icon .ham.active span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-12px, -12px);
+    background: #ff0000;
+}
+
+#ham-icon .ham.active span.ham-top {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#ham-icon .ham.active span.ham-mid {
+    transform: rotate(-45deg) translate(-7px, 9px);
+}
+
+
+
+#menuList {
+    position: absolute;
+    width: 300px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menuList li {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+
+#menuList a {
+    text-decoration: none;
+    color: #232323;
+
+    transition: color 0.3s ease;
+}
+
+#menuList a:hover {
+    color: tomato;
+}
+
+#menuList.active {
+  transform: none;
+}
